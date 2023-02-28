@@ -1,11 +1,6 @@
 # Importance Sampling
 
-Given some random variable *X* s.t. *X* ∼ *P*<sub>0</sub>(*X*) and we
-want to estimate the expectation of some function of X (i.e., *F*(*X*)).
-A Monte Carlo way is to generate an ensemble of realizations of
-(*x*<sub>*i*</sub><sup>0</sup>,*f*(*x*<sub>*i*</sub><sup>0</sup>)) for
-*i* = 1, 2, ..., *N* according to the distribution *P*<sub>0</sub> and
-the approximate expectation is then given by
+Given some random variable *X* s.t. *X* ∼ *P*<sub>0</sub>(*X*) and we want to estimate the expectation of some function of X (i.e., *F*(*X*)). A Monte Carlo way is to generate an ensemble of realizations of (*x*<sub>*i*</sub><sup>0</sup>,*f*(*x*<sub>*i*</sub><sup>0</sup>)) for *i* = 1, 2, ..., *N* according to the distribution *P*<sub>0</sub> and the approximate expectation is then given by
 
 $$E\_{P_0}\[F(X)\] = \int_x F(x) P_0(x) dx \approx \frac{1}{N} F(x^0_n)$$
 
@@ -33,7 +28,7 @@ problem as given by the Eq 3, where **1**<sub>*b*</sub>(*x*) equals 1 if
 precipitation at time step *t* and this can be used to estimate
 probability of total DJF precipitation dropping below some level *b*.
 
-*P*(∫<sub>0</sub><sup>*T*</sup>*A*(*x*(*t*))*d**t*\<*b*) = ∫<sub>*x*</sub>**1**<sub>*b*</sub>(∫<sub>0</sub><sup>*T*</sup>*A*(*x*(*t*))*d**t*)*P*<sub>0</sub>({*x*(*t*)}<sub>0 ≤ *t* ≤ *T*</sub>)*d**x* = *E*\[**1**<sub>*b*</sub>(∫<sub>0</sub><sup>*T*</sup>*A*(*x*(*t*))*d**t*)\]
+$$ P(\int_0^T A(x(t)) dt < b) = \int_x \textbf{1}_b(\int_0^T A(x(t))dt)P_0(\{x(t)\}_{0\leq t \leq T})dx = E[\textbf{1}_b(\int_0^T A(x(t))dt)] $$
 
 Suppose from Eq 2 and 3 we can estimate the probability of total DJF
 precipitation being smaller than *b* as denoted by *γ*<sub>*b*</sub>,
@@ -49,7 +44,7 @@ same set of climatological boundary conditions is used. A workflow to
 implement the algorithm is given below for *i* = 1, 2, ..., *m*
 
 1\. Iterate each trajectory from time *t*<sub>*i* − 1</sub> = (*i*−1)*τ*
-to time *t*<sub>*i*</sub> = *i**τ*,
+to time *t*<sub>*i*</sub> = *iτ*,
 
 2\. At time *t*<sub>*i*</sub>, stop the simulation and estimate the
 weight associated with each trajectory *n* as given by
@@ -61,13 +56,12 @@ where
 $$R_i = \frac{1}{N}e^k\int^{t_i}\_{t\_{i-1}}A(X_n(t))dt,$$
 
 3\. Randomly sample *N* new trajectories (with replacement) according to
-the probability mass function
-*P*(*x*=*n*) ∝ *W*<sub>*n*</sub><sup>*i*</sup>,
+the probability mass function $P(x=n) \propto W_n^i$,
 
-4\. Add small random perturbations to the states of the *N* new
-trajectories at time *t*<sub>*i*</sub>,
+4\. Add small random perturbations to the states of the $N$ new
+trajectories at time $t_i$,
 
-5\. Increment *i* by 1 and repeat 1-5.
+5\. Increment $i$ by 1 and repeat 1-5.
 
 Note that I used the above workflow in my demo (without the perturbation
 step since I used a stochastic toy model), which is slightly different
