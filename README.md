@@ -19,7 +19,7 @@ Suppose from Eq 2 and 3 we can estimate the probability of total DJF precipitati
 
 # Importance Sampling + Monte Carlo
 
-Suppose the simulation horizon is *T*<sub>*a*</sub> (e.g., DJF or ∼<!-- -->90 days in our case) and it can be divided into multiple sub-intervals (i.e., *T*<sub>*a*</sub> = *m* ⋅ *τ*). A total of *N* trajectories are initiated using independent initial conditions and the same set of climatological boundary conditions is used. A workflow to implement the algorithm is given below for *i* = 1, 2, ..., *m*
+Suppose the simulation horizon is $T$ (e.g., DJF or ∼<!-- -->90 days in our case) and it can be divided into multiple sub-intervals (i.e., $T = m \tau$). A total of *N* trajectories are initiated using independent initial conditions and the same set of climatological boundary conditions is used. A workflow to implement the algorithm is given below for *i* = 1, 2, ..., *m*
 
 1\. Iterate each trajectory from time *t*<sub>*i* − 1</sub> = (*i*−1)*τ* to time *t*<sub>*i*</sub> = *iτ*,
 
