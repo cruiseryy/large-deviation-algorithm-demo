@@ -43,9 +43,9 @@ $$ E_0 [ F( X(t)_{0 \leq t \leq T})] \approx \frac{1}{N} \sum_{n=1}^N F(X_n(t)_{
 
 where $\lambda(k,T) = \frac{1}{T} \sum_i log R_i$
 
-# The Toy Problem
+# Toy Problem
 
-I used a simple Markov chain to simulate daily precipitation over a 200-day interval. The probabilities of rain and no rain for today are only conditioned on the state of yeasterday and if we roll 'rain' for today, the intensity is drawn from a log normal distribution. The parameter values are arbitrarily assigned. Run ```control_run.m``` to do a control run of 100,000 realizations (i.e., 100,000 years) and run ```alter_run.m``` to repeat for 20 times the altered simulation using the abovementioned algorithm (and each altered run consists of 128 realizations/years).
+I used a simple Markov chain to simulate daily precipitation over a 200-day interval. The probabilities of rain and no rain for today are only conditioned on the state of yeasterday and if we roll 'rain' for today, the intensity is drawn from a log normal distribution. The parameter values are arbitrarily assigned. Run ```control_run.m``` to do a control run of 100,000 realizations (i.e., 100,000 years) and run ```alter_run.m``` to repeat for 20 times the altered simulation using the abovementioned algorithm (and each altered run consists of 128 realizations/years). **Note that step 4 was not used in this toy problem since I used a stochastic process already.**
 
 
 ## reference
