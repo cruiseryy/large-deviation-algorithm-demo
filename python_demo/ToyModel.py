@@ -18,7 +18,6 @@ class ToyModel:
         self.intensity = np.zeros(N)
 
     def evalute(self):
-        
         self.intensity = [(self.score(self.traj[:,j]), j) for j in range(self.n)]
         self.intensity.sort(key = lambda x: x[0], reverse=True)
         dp = 1.0 / self.n
@@ -92,8 +91,8 @@ class ToyModel:
         thres = 2.765
         return (thres*n - np.sum(traj))
 
-def tmplot(run1, run2):
-    return
+# def tmplot(run1, run2):
+#     return
 
 
 
