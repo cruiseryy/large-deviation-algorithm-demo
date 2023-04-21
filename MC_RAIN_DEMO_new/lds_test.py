@@ -21,8 +21,8 @@ for i in range(2):
         alpha = 1 
         beta = 1
         for y in range(39):
-            low = np.quantile(wd[:, y], 0.01)
-            upp = np.quantile(wd[:, y], 0.99)
+            low = np.quantile(wd[:, y], 0.05)
+            upp = np.quantile(wd[:, y], 0.95)
             ax[i][j].plot([low, upp],[(y+alpha)/(39+beta), (y+alpha)/(39+beta)], color='black')
             ax[i][j].scatter(wd0[y], (y+alpha)/(39+beta), marker='D', color='red', label='empirical')
             ax[i][j].scatter(np.mean(wd[:, y]), (y+alpha)/(39+beta), marker='o', color='black', label='MC')
@@ -35,7 +35,7 @@ for i in range(2):
         ax[i][j].set_xlim([100, 1400])
         
 fig.tight_layout()
-plt.show()
+# plt.show()
 fig.savefig('MC_RAIN_DEMO_new/fig1.pdf')
 
 
