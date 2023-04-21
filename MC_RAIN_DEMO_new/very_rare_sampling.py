@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from sklearn.mixture import GaussianMixture
 import bisect
-from MC_SAMPLING import mc_sampler
+from MC_SAMPLING import mc_sampler2
 
 np.random.seed(7)
 
@@ -42,7 +42,7 @@ datad = data[:idx, :]
 dataw = data[idx:, ]
 
 # mc1 = the drier sampler, mc2 = the wetter sampler
-mc1 = mc_sampler(thres=1, data=datad)
+mc1 = mc_sampler2(thres=1, data=datad)
 mc1.get_para()
-mc2 = mc_sampler(thres=1, data=dataw)
+mc2 = mc_sampler2(thres=1, data=dataw)
 mc2.get_para()
