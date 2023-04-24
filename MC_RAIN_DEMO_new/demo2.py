@@ -221,10 +221,10 @@ class LDS_demo:
         # return np.sum(traj)
     
 if __name__ == '__main__':
-    np.random.seed(2312534)
+    np.random.seed(777)
 
     # to prepare the two separate training sets for the MC samplers
-    prcp = np.mean(np.loadtxt('MC_RAIN_DEMO_new/sta_daily.csv'), axis=1)
+    prcp = np.mean(np.loadtxt('large-deviation-algorithm-demo/MC_RAIN_DEMO_new/sta_daily.csv'), axis=1)
     mm  = np.array([31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31])
     data = np.zeros([39, 90])
     cur = np.sum(mm[:11])
@@ -275,11 +275,8 @@ if __name__ == '__main__':
     mc1.get_para()
     mc2 = mc_sampler2(thres=1, data=dataw)
     mc2.get_para()
-    # mc0 = mc_sampler2(thres=1, data=data)
-    # mc0.get_para()
     # to make things less messy, i used one GEN to call both MC generators
     gg = GEN(mc1, mc2, pd)
-    # gg = GEN(mc0, mc0, pd=1)
 
     control_run = LDS_demo(gen=gg, k=0, N=10000)
     control_run.update()
@@ -295,12 +292,13 @@ if __name__ == '__main__':
     fig, ax = plt.subplots()
     ax.plot(1/control_run.res[:,0], 7.07842*90 - control_run.res[:,1], color ='k', label='mc_k=0')
     ax.scatter(1/alter_run.res[:,0], 7.07842*90 - alter_run.res[:,1], label='mc_k=0.005')
+
     ax.scatter(1/freq, 7.07842*90 - tot,marker='D', label='obs')
     ax.set_xscale('log')
-    ax.set_ylabel('return period (yr)')
-    ax.set_xlabel('total rainfall (mm)')
+    ax.set_xlabel('return period (yr)')
+    ax.set_ylabel('total rainfall (mm)')
     ax.legend()
-    fig.savefig('MC_RAIN_DEMO_new/validation.pdf')
+    fig.savefig('large-deviation-algorithm-demo/MC_RAIN_DEMO_new/validation.pdf')
     
     pause = 1
 
