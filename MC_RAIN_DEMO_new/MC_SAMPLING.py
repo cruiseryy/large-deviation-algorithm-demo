@@ -85,8 +85,8 @@ class mc_sampler2:
         self.prcp = self.data[np.where(self.data > self.thres)]
 
         self.pp = pp 
-        self.p0 = p0
-        self.p1 = p1
+        self.p0 = p0/(p0+p1)
+        self.p1 = p1/(p0+p1)
         return 
     
     def generate(self, dt=90, ic=[]):
@@ -106,7 +106,6 @@ class mc_sampler2:
 
         return traj[1:]
 
-        
 
 if __name__ == "__main__":
     test = mc_sampler()
