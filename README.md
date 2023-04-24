@@ -29,7 +29,7 @@ $$W^i_n = \frac{e^{k\int^{t_i}\_{t\_{i-1}}A(X_n(t))dt}}{R_i}$$
 
 where
 
-$$R_i = \frac{1}{N} \sum_n e^{k\int^{t_i}\_{t\_{i-1}}A(X_n(t))}dt,$$
+$$R_i = \frac{1}{N} \sum_n e^{k\int^{t_i}\_{t\_{i-1}}A(X_n(t))dt},$$
 
 3\. Randomly sample *N* new trajectories (with replacement) according to the probability mass function $P(x=n) \propto W_n^i$,
 
