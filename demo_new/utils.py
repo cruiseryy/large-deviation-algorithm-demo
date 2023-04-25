@@ -47,6 +47,9 @@ class data_loader:
         self.dataw = dataw
         self.pd = pd
 
+        self.data0 = data
+        self.tot = tot
+
         print('dry samples = {}, wet samples = {}'.format(idx, 39-idx))
 
 class GEN: 
