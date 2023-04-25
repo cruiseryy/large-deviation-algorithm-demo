@@ -48,7 +48,7 @@ class data_loader:
         self.pd = pd
 
         self.data0 = data
-        self.tot = tot
+        self.tot0 = tot
 
         print('dry samples = {}, wet samples = {}'.format(idx, 39-idx))
 

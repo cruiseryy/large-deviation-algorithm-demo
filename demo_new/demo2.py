@@ -131,8 +131,8 @@ if __name__ == '__main__':
 
     freq = [(i+1)/39 for i in range(39)]
     freq = np.array(freq)
-    tot.sort()
-    tot = 7.07842*90 - tot
+    dl.tot0.sort()
+    tot = 7.07842*90 - dl.tot0
     fig, ax = plt.subplots()
     ax.plot(1/control_run.res[:,0], 7.07842*90 - control_run.res[:,1], color ='k', label='mc_k=0')
     ax.scatter(1/alter_run.res[:,0], 7.07842*90 - alter_run.res[:,1], label='mc_k=0.005')
@@ -142,7 +142,7 @@ if __name__ == '__main__':
     ax.set_xlabel('return period (yr)')
     ax.set_ylabel('total rainfall (mm)')
     ax.legend()
-    fig.savefig('large-deviation-algorithm-demo/MC_RAIN_DEMO_new/validation.pdf')
+    fig.savefig('demo_new/validation.pdf')
     
     pause = 1
 
