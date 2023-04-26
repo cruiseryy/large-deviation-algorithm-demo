@@ -2,7 +2,7 @@
 
 Given some random variable $X$ s.t. $X \sim P_0(X)$ and we want to estimate the expectation of some function of $X$ (i.e., $F(X)$ ). A Monte Carlo way is to generate an ensemble of realizations of $(x^i_n, F(x^i_n))$ for $i = 1, 2, ..., N$ according to the distribution $P_0$ and the approximate expectation is then given by
 
-$$E\_{P_0}\[F(X)\] = \int_x F(x) P_0(x) dx \approx \frac{1}{N} F(x^0_n) \qquad -EQ(1)$$
+$$E\_{P_0}\[F(X)\] = \int_x F(x) P_0(x) dx \approx \frac{1}{N} \sum_n^N F(x^0_n) \qquad -EQ(1)$$
 
 For situations where we have special interests in rare events (which can be described by a subset $B$ of all possible outcomes of $X$). Assume the $P(X \in B) = \gamma_B$ over some time horizon $T$, the relative error using Eq 1 is of the order of $\sqrt{(N \gamma_B (1 - \gamma_B))}/(N \gamma_B) \approx 1/ \sqrt{N \gamma_B}$ which can be pretty large when $\gamma_B$ is small.
 
