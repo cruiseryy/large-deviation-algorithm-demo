@@ -39,7 +39,7 @@ $$R_i = \frac{1}{N} \sum_n e^{k\int^{t_i}\_{t\_{i-1}}A(X_n(t))dt},$$
 
 Then more weights we put on the trajectories distributed near the domain of interets ($B$) must be inverted before plotting the intensity vs frequency/return period relationship. And the inversion is given by
 
-$$ E_0 [ F( X(t)_{0 \leq t \leq T})] \approx \frac{1}{N} \sum_{n=1}^N F(X_n(t)_{0 \leq t \leq T} ) \cdot e^{-k \int_0^T A(X_n(t)) dt} \cdot e^{T \lambda(k,T)} \qquad -EQ(4)$$
+$$ E[F(X)]  \approx \frac{1}{N} \sum_{n=1}^N F(X_n(t)_{0 \leq t \leq T} ) \cdot e^{-k \int_0^T A(X_n(t)) dt} \cdot e^{T \lambda(k,T)} \qquad -EQ(4)$$
 
 where $\lambda(k,T) = \frac{1}{T} \sum_i log R_i$
 
