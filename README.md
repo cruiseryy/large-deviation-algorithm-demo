@@ -1,4 +1,4 @@
-# Importance Sampling
+<img width="1144" alt="image" src="https://github.com/cruiseryy/large-deviation-algorithm-demo/assets/66930258/25ac6a69-d660-4f34-9103-d789ea02fcab"># Importance Sampling
 
 Given some random variable $X$ s.t. $X \sim P_0(X)$ and we want to estimate the expectation of some function of $X$ (i.e., $F(X)$ ). A Monte Carlo way is to generate an ensemble of realizations of $(x^i_n, F(x^i_n))$ for $i = 1, 2, ..., N$ according to the distribution $P_0$ and the approximate expectation is then given by
 
@@ -47,6 +47,12 @@ where $\lambda(k,T) = \frac{1}{T} \sum_i log R_i$
 
 I used a simple Markov chain to simulate daily precipitation over a 200-day interval. The probabilities of rain and no rain for today are only conditioned on the state of yeasterday and if we roll 'rain' for today, the intensity is drawn from a log normal distribution. The parameter values are arbitrarily assigned. Run ```control_run.m``` to do a control run of 100,000 realizations (i.e., 100,000 years) and run ```alter_run.m``` to repeat for 20 times the altered simulation using the abovementioned algorithm (and each altered run consists of 128 realizations/years). **Note that step 4 was not used in this toy problem since I used a stochastic process already.**
 
+# A brief derivation
+<img width="1144" alt="image" src="https://github.com/cruiseryy/large-deviation-algorithm-demo/assets/66930258/7f189982-5b69-437a-b595-ce472b32bcac">
 
-## reference
+
+
+## Reference
 Ragone, F., Wouters, J., & Bouchet, F. (2018). Computation of extreme heat waves in climate models using a large deviation algorithm. Proceedings of the National Academy of Sciences, 115(1), 24-29.
+
+Giardina, C., Kurchan, J., Lecomte, V., & Tailleur, J. (2011). Simulating rare events in dynamical processes. Journal of statistical physics, 145, 787-811.
