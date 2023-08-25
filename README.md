@@ -50,6 +50,10 @@ I used a simple Markov chain to simulate daily precipitation over a 200-day inte
 # A Brief Derivation
 <img width="1144" alt="image" src="https://github.com/cruiseryy/large-deviation-algorithm-demo/assets/66930258/7f189982-5b69-437a-b595-ce472b32bcac">
 
+# On difference between return period calculations
+<img width="1306" alt="image" src="https://github.com/cruiseryy/large-deviation-algorithm-demo/assets/66930258/ec8c9fc1-ca06-40df-95ab-69c34d0b4a45">
+
+
 ## Reference
 Ragone, F., Wouters, J., & Bouchet, F. (2018). Computation of extreme heat waves in climate models using a large deviation algorithm. Proceedings of the National Academy of Sciences, 115(1), 24-29.
 
